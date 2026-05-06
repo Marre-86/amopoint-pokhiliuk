@@ -51,6 +51,20 @@
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
                     <h1 class="mb-1 font-medium">Let's get started</h1>
+                    
+                    {{-- Display user name from database --}}
+                    @if(isset($user) && $user)
+                        <div class="mb-4 p-3 bg-[#f8f8f7] dark:bg-[#2a2a28] rounded-sm border border-[#e3e3e0] dark:border-[#3E3E3A]">
+                            <p class="text-[#1b1b18] dark:text-[#EDEDEC] font-medium">First User from Database:</p>
+                            <p class="text-[#706f6c] dark:text-[#A1A09A]">Name: <span class="text-[#1b1b18] dark:text-[#EDEDEC] font-medium">{{ $user->name }}</span></p>
+                            <p class="text-[#706f6c] dark:text-[#A1A09A] text-sm mt-1">Email: {{ $user->email }}</p>
+                        </div>
+                    @else
+                        <div class="mb-4 p-3 bg-[#fff2f2] dark:bg-[#1D0002] rounded-sm border border-[#f53003] dark:border-[#F61500]">
+                            <p class="text-[#f53003] dark:text-[#FF4433]">No users found in the database.</p>
+                        </div>
+                    @endif
+                    
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">With so many options available to you,<br /> we suggest you start with the following:</p>
                     <ul class="flex flex-col mb-4 lg:mb-6">
                         <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:top-1/2 before:bottom-0 before:left-[0.4rem] before:absolute">
