@@ -1,35 +1,34 @@
-<p align="center">
-  <h1 align="center">Тестовое задание для AmoPoint</h1>
-  <div align="center" style="margin-top: -10px;">
-    <h3 align="center" style="margin-bottom: 5px;">Кандидат: Похилюк Артем</h3>
-    <h3 align="center" style="margin-top: 5px;">Вакансия: PHP-программист</h3>
-  </div>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="80%">
+      <h1 align="center">Тестовое задание для AmoPoint</h1>
+      </td>
+    <td align="center" width="20%">
+      <a href="https://amopoint.ru/" target="_blank">
+        <img src="./public/images/amopoint-logo.png" alt="AmoPoint Logo" width="100">
+      </a>
+    </td>
+  </tr>
+</table>
+<h3 align="center">Кандидат: Похилюк Артем</h3>
+<h4 align="center">Вакансия: PHP-программист</h4>
+
 
 <p align="center">
-  <img src="./public/images/amopoint-logo.png" alt="AmoPoint Logo" width="150">
-  <br>
-  <a href="https://amopoint.ru/" target="_blank">Сайт компании</a>
-</p>
-
-
-<p align="center">
-  <a href="https://hh.ru/vacancy/132699498" target="_blank" style="display: inline-flex; align-items: center; background-color: #007bff; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; border: 1px solid rgba(0,0,0,0.1);">
-    <img src="./public/images/HeadHunter-logo.png" width="20" height="20" style="margin-right: 8px;" alt="HH">
-    вакансия
+  <a href="https://hh.ru/vacancy/132699498" target="_blank">
+    <img src="https://img.shields.io/badge/вакансия-007bff?style=for-the-badge" alt="Вакансия">
   </a>
-  &nbsp;&nbsp;
-  <a href="https://hh.ru/resume/9207f557ff0bf4ecfc0039ed1f71464d546442" target="_blank" style="display: inline-flex; align-items: center; background-color: #28a745; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; border: 1px solid rgba(0,0,0,0.1);">
-    <img src="./public/images/HeadHunter-logo.png" width="20" height="20" style="margin-right: 8px;" alt="Resume">
-    резюме кандидата
+  &nbsp;
+  <a href="https://hh.ru/resume/9207f557ff0bf4ecfc0039ed1f71464d546442" target="_blank">
+    <img src="https://img.shields.io/badge/резюме_кандидата-28a745?style=for-the-badge" alt="Резюме кандидата">
   </a>
 </p>
 
 ## Описание задания
 
 1. Напишите Laravel проект, в состав которого обязательно входит
-   1. Консольная команда, которая каждые 5 минут получает информацию от любого API на ваш выбор и сохраняет её в таблицу БД
-   2. Route, отдающий массив записей таблицы в формате json. Например:   https://official-joke-api.appspot.com/random_joke
+    1. Консольная команда, которая каждые 5 минут получает информацию от любого API на ваш выбор и сохраняет её в таблицу БД
+    2. Route, отдающий массив записей таблицы в формате json. Например:   https://official-joke-api.appspot.com/random_joke
 
 
 2. Необходимо написать js код, который в зависимости от выбранного значения поля Тип отражает разный набор полей на странице   http://test.amopoint-dev.ru/testzz/testlist.html
