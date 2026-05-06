@@ -12,10 +12,6 @@ class HomeController extends Controller
      */
     public function index(): View
     {
-        // Retrieve the first user from the database
-        $user = User::first();
-
-        // Pass the user to the view
-        return view('welcome', ['user' => $user]);
+        return view('welcome');
     }
 }

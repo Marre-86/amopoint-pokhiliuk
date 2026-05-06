@@ -1,15 +1,4 @@
-<table align="center">
-  <tr>
-    <td align="center" width="80%">
-      <h1 align="center">Тестовое задание для AmoPoint</h1>
-      </td>
-    <td align="center" width="20%">
-      <a href="https://amopoint.ru/" target="_blank">
-        <img src="./public/images/amopoint-logo.png" alt="AmoPoint Logo" width="100">
-      </a>
-    </td>
-  </tr>
-</table>
+<h1 align="center">Тестовое задание для AmoPoint <a href="https://amopoint.ru/" target="_blank"><img src="./public/images/amopoint-logo.png" alt="AmoPoint Logo" width="100"></a></h1>
 <h3 align="center">Кандидат: Похилюк Артем</h3>
 <h4 align="center">Вакансия: PHP-программист</h4>
 
