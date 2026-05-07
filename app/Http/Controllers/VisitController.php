@@ -16,13 +16,13 @@ class VisitController extends Controller
         // Get visits from last 24 hours - fetch all at once
         $last24Hours = now()->subHours(24);
         $visitsLast24Hours = Visit::where('created_at', '>=', $last24Hours)->get();
-        
+
         // Line chart data: visits per hour for last 24 hours as time series
         $hourlyVisits = [];
         $hourLabels = [];
-        
+
         $currentHour = (int) now()->format('H');
-        
+
         // Generate 24 hours: from (current hour - 23) to current hour
         for ($i = -23; $i <= 0; $i++) {
             $hour = $currentHour + $i;
@@ -31,18 +31,18 @@ class VisitController extends Controller
             } elseif ($hour >= 24) {
                 $hour -= 24;
             }
-            
+
             $hourStart = now()->addHours($i)->startOfHour();
             $hourEnd = now()->addHours($i)->endOfHour();
-            
+
             $count = $visitsLast24Hours->filter(function ($visit) use ($hourStart, $hourEnd) {
                 return $visit->created_at >= $hourStart && $visit->created_at <= $hourEnd;
             })->count();
-            
+
             $hourlyVisits[] = $count;
             $hourLabels[] = str_pad($hour, 2, '0', STR_PAD_LEFT);
         }
-        
+
         // Pie chart data: visits by city
         $cityVisits = Visit::where('created_at', '>=', $last24Hours)
             ->selectRaw('city, COUNT(*) as count')
@@ -56,10 +56,10 @@ class VisitController extends Controller
                     'count' => $item->count
                 ];
             });
-        
+
         $pieLabels = $cityVisits->pluck('city')->toArray();
         $pieData = $cityVisits->pluck('count')->toArray();
-        
+
         $totalVisits = array_sum($hourlyVisits);
 
         return view('dashboard', [
@@ -91,5 +91,4 @@ class VisitController extends Controller
             'visit' => $visit,
         ], 201);
     }
-
 }

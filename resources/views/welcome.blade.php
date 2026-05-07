@@ -13,38 +13,11 @@
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
-            @if (Route::has('login'))
-                <nav class="flex items-center justify-end gap-4">
-                    @auth
-                        <a
-                            href="{{ url('/dashboard') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
-                        >
-                            Dashboard
-                        </a>
-                    @else
-                        <a
-                            href="{{ route('login') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
-                        >
-                            Log in
-                        </a>
-
-                        @if (Route::has('register'))
-                            <a
-                                href="{{ route('register') }}"
-                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
+            
         </header>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="text-[13px] leading-[20px] flex-1 p-6 pb-6 lg:p-20 lg:pb-10 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
-                    {{-- README Header with candidate info --}}
                     <div class="text-center mb-6">
                         <h1 class="text-2xl font-bold text-[#1b1b18] dark:text-[#EDEDEC] mb-2">
                             Тестовое задание для AmoPoint
@@ -53,7 +26,7 @@
                         <h3 class="text-lg font-medium text-[#1b1b18] dark:text-[#EDEDEC] mb-1">Кандидат: Похилюк Артем</h3>
                         <h4 class="text-base font-normal text-[#706f6c] dark:text-[#A1A09A] mb-4">Вакансия: PHP-программист</h4>
                         
-                        <div class="flex justify-center space-x-1 mb-16">
+                        <div class="flex justify-center space-x-1 mb-4">
                             <a href="https://hh.ru/vacancy/132699498" target="_blank" class="inline-block">
                                 <img src="https://img.shields.io/badge/вакансия-007bff?style=for-the-badge" alt="Вакансия">
                             </a>
@@ -61,18 +34,35 @@
                                 <img src="https://img.shields.io/badge/резюме_кандидата-28a745?style=for-the-badge" alt="Резюме кандидата">
                             </a>
                         </div>
-                        <div class="flex justify-start">
+                        <div class="flex justify-center">
                             <a href="https://github.com/Marre-86/amopoint-pokhiliuk" target="_blank" class="inline-block">
                                 <img src="https://img.shields.io/badge/Исходный код-181717?style=for-the-badge&logo=github&logoColor=white" alt="Исходный код">
                             </a>
-                            <a href="{{ route('latest_news') }}" class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] hover:text-[#c02600] dark:hover:text-[#ff6b4a]">
-                                результирующий Route здесь...
-                            </a>
+                            
                         </div>
+
                     </div>
                     
                     {{-- <h1 class="mb-1 font-medium">Let's get started</h1> --}}
                     
+                    <!-- Additional content section with ordered list -->
+                    <div class="mt-8 pt-8 border-t border-[#19140035] dark:border-[#3E3E3A]">
+                        <h2 class="text-lg font-semibold text-[#1b1b18] dark:text-[#EDEDEC] mb-4"></h2>
+                        <ol class="list-decimal pl-5 space-y-3 text-[#1b1b18] dark:text-[#EDEDEC]">
+                            <li>
+                                <span>Перейти на страницу</span>
+                                <a href="/point1" class="text-[#f53003] dark:text-[#FF4433] hover:text-[#c02600] dark:hover:text-[#ff6b4a] underline underline-offset-2">с описанием и решением пункта 1</a>.
+                            </li>
+                            <li>
+                                <span>Перейти на страницу</span>
+                                <a href="/point2" class="text-[#f53003] dark:text-[#FF4433] hover:text-[#c02600] dark:hover:text-[#ff6b4a] underline underline-offset-2">с описанием и решением пункта 2</a>.
+                            </li>
+                            <li>
+                                <span>Перейти на страницу</span>
+                                <a href="/point3" class="text-[#f53003] dark:text-[#FF4433] hover:text-[#c02600] dark:hover:text-[#ff6b4a] underline underline-offset-2">с описанием и решением пункта 3</a>.
+                            </li>
+                        </ol>
+                    </div>
                     
                 </div>
                 <div class="bg-[#fff2f2] dark:bg-[#1D0002] relative lg:-ml-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg aspect-[335/364] lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">

@@ -16,3 +16,13 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Dashboard route - only accessible to authenticated users
 Route::get('/dashboard', [VisitController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+
+Route::get('/point1', function () {
+    return view('point1');
+});
+Route::get('/point2', function () {
+    return view('point2');
+});
+Route::get('/point3', function () {
+    return view('point3');
+});
