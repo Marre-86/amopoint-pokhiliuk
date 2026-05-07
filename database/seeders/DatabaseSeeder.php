@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // Create test user from environment variables
         $adminEmail = env('ADMIN_EMAIL');
         $adminPassword = env('ADMIN_PASSWORD');
-        
+
         if ($adminEmail && $adminPassword) {
             User::factory()->create([
                 'name' => 'Test User',
